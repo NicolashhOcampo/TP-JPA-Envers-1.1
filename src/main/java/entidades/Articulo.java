@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 @Entity
 @NoArgsConstructor
@@ -12,6 +13,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
+@Audited
 @Table (name= "articulo")
 public class Articulo implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -28,6 +30,7 @@ public class Articulo implements Serializable {
 
     @Column (name = "precio")
     private int precio;
+
 
     @OneToMany (mappedBy = "articulo", cascade = CascadeType.PERSIST)
     @Builder.Default

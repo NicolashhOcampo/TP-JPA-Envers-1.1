@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 @Entity
 @NoArgsConstructor
@@ -12,6 +13,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
+@Audited
 @Table (name= "domicilio")
 
 public class Domicilio implements Serializable {

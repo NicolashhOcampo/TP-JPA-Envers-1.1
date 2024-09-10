@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 @Entity
 @NoArgsConstructor
@@ -12,6 +13,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
+@Audited
 @Table (name= "factura")
 
 public class Factura implements Serializable {
@@ -31,7 +33,7 @@ public class Factura implements Serializable {
     private double total;
 
 
-    @ManyToOne (cascade = CascadeType.PERSIST) //Se elimino la Factura no se elimina el cliente
+    @ManyToOne (cascade = CascadeType.PERSIST) //Si elimino la Factura no se elimina el cliente
     @JoinColumn (name = "fk_cliente")
     private Cliente cliente;
 

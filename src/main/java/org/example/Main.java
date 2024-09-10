@@ -13,6 +13,7 @@ public class Main {
         try{
             em.getTransaction().begin(); //Para comenzar la conexion con la base de datos
 
+            /*
             Categoria categoria1= Categoria.builder()
                     .denominacion("Bebidas")
                     .build();
@@ -78,14 +79,26 @@ public class Main {
 
 
             em.persist(factura1);
+            */
 
-            em.flush(); //Sirve para limpiar la conexion
 
-            em.getTransaction().commit(); //Se hace el commit del persist
+            //Factura factura1= em.find(Factura.class,1L);
+            //factura1.setNumero(10);
+
+            Articulo articulo= em.find(Articulo.class,2L);
+            System.out.println(articulo.getDenominacion());
+            articulo.setPrecio(70);
+            em.merge(articulo);
+
+            //em.merge(factura1);
+            //em.merge(factura1);
+            em.flush();
+
+            em.getTransaction().commit();
 
             em.close();
         } catch(Exception e){
-            em.getTransaction().rollback(); //Si hay un error se hace un rollback
+            em.getTransaction().rollback();
             e.printStackTrace(System.out);
             System.out.println("ERROR");
         }

@@ -22,6 +22,8 @@ dependencies {
 
     runtimeOnly 'com.h2database:h2:1.4.200'
 
+    //implementation group: 'org.hibernate', name: 'hibernate-envers', version: '7.0.0.Beta1'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
