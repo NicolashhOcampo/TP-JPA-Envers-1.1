@@ -12,8 +12,6 @@
         <class>entidades.DetalleFactura</class>
         <class>entidades.Factura</class>
         <class>audit.Revision</class>
-
-
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/Base/test"/>

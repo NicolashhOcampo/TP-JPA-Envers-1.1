@@ -79,19 +79,21 @@ public class Main {
 
 
             em.persist(factura1);
+
             */
 
+            Factura factura1= em.find(Factura.class,1L);
+            factura1.setNumero(10);
+            em.merge(factura1);
 
-            //Factura factura1= em.find(Factura.class,1L);
-            //factura1.setNumero(10);
-
+            /*
             Articulo articulo= em.find(Articulo.class,2L);
             System.out.println(articulo.getDenominacion());
             articulo.setPrecio(70);
             em.merge(articulo);
+            */
 
-            //em.merge(factura1);
-            //em.merge(factura1);
+
             em.flush();
 
             em.getTransaction().commit();
