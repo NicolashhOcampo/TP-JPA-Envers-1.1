@@ -83,7 +83,7 @@ public class Main {
             */
 
             Factura factura1= em.find(Factura.class,1L);
-            factura1.setNumero(10);
+            factura1.setNumero(15);
             em.merge(factura1);
 
             /*
